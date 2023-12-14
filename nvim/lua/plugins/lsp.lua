@@ -125,6 +125,8 @@ return {
                     })
                 end,
             })
+
+            require("lspconfig").gdscript.setup({})
         end,
     },
 
@@ -142,8 +144,8 @@ return {
                     null_ls.builtins.formatting.autopep8,
                     null_ls.builtins.formatting.stylua,
                     null_ls.builtins.formatting.yamlfmt,
-					null_ls.builtins.formatting.shfmt,
-					null_ls.builtins.formatting.xmlformat
+                    null_ls.builtins.formatting.shfmt,
+                    null_ls.builtins.formatting.xmlformat,
                 },
             }
         end,
@@ -159,8 +161,8 @@ return {
                 "cmakelang",
                 "stylua",
                 "yamlfmt",
-				"shfmt",
-				"xmlformatter",
+                "shfmt",
+                "xmlformatter",
                 -- Linter
                 "shellcheck",
                 -- DAP
