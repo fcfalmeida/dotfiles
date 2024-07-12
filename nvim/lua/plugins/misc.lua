@@ -68,31 +68,4 @@ return {
         "tpope/vim-repeat",
         event = "VeryLazy",
     },
-
-    {
-        "iamcco/markdown-preview.nvim",
-        build = "cd app && npm install",
-        ft = "markdown",
-        init = function()
-            vim.g.mkdp_filetypes = { "markdown" }
-        end,
-    },
-
-    {
-        "giusgad/pets.nvim",
-        cmd = {
-            "PetsNew",
-            "PetsNewCustom",
-            "PetsList",
-            "PetsKill",
-            "PetsKillAll",
-            "PetsPauseToggle",
-            "PetsHideToggle",
-        },
-        dependencies = {
-            "MunifTanjim/nui.nvim",
-            "edluffy/hologram.nvim",
-        },
-        opts = {},
-    },
 }

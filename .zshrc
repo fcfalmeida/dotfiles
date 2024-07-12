@@ -7,8 +7,8 @@ export PATH=$PATH:$HOME/.local/bin
 export PATH=$PATH:$HOME/projects/Chimera/engine/build/bin/debug
 
 export PATH=$PATH:$HOME/.cargo/bin
-export PATH=$PATH:$HOME/.local/share/bob/nvim-bin
-export PATH=$PATH:/usr/local/texlive/2023/bin/x86_64-linux
+export PATH=$PATH:$HOME/.local/share/bob/v0.10.0/nvim-linux64/bin
+export PATH=$PATH:/usr/local/texlive/2024/bin/x86_64-linux
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -31,7 +31,7 @@ function docker_run() {
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="nicoulaj"
+ZSH_THEME="hyperzsh"
 
 plugins=(
 	git

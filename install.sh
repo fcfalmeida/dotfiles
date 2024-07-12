@@ -16,7 +16,9 @@ sudo apt install -y \
 	cmake \
 	curl \
 	cargo \
-	git
+	git \
+	ripgrep \
+	xclip
 
 # Picom Dependencies
 sudo apt install -y \

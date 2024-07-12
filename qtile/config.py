@@ -100,8 +100,7 @@ keys = [
     Key([mod], "w", lazy.window.kill(), desc="Kill focused window"),
     Key([mod, "control"], "r", lazy.reload_config(), desc="Reload the config"),
     Key([mod, "control"], "q", lazy.shutdown(), desc="Shutdown Qtile"),
-    Key([mod], "r", lazy.spawn(os.path.expanduser(
-        "~/.config/rofi/launchers/type-4/launcher.sh")), desc="Launch rofi"),
+    Key([mod], "r", lazy.spawn("rofi -show drun"), desc="Launch rofi"),
     Key([mod], "F9", lazy.spawn(os.path.expanduser(
         "~/.config/i3lock/lock.sh")), desc="Lock screen"),
     Key([mod, "control", "shift"], "p", lazy.spawn("shutdown -h now"), desc="Shutdown system")
@@ -157,7 +156,7 @@ layouts = [
 ]
 
 widget_defaults = dict(
-    font="MesloLGM Nerd Font",
+    font="Terminess Nerd Font",
     fontsize=14,
     padding=3,
 )
@@ -186,7 +185,7 @@ screens = [
                         ((0, 100), "ffffff")
                     ],
                     progress_bar_thickness = 3,
-                    icon_size = 22,
+                    icon_size = 16,
                     font="sans"
                 ),
                 qpw.Memory(progress_bar_colors = [
@@ -215,7 +214,7 @@ screens = [
                         ((0, 100), "ffffff")
                     ],
                     progress_bar_thickness = 3,
-                    icon_size = 13,
+                    icon_size = 16,
                     font="sans"
                 ),
                 # NB Systray is incompatible with Wayland, consider using StatusNotifier instead

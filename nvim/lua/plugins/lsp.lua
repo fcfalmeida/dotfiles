@@ -82,8 +82,6 @@ return {
                 cmake = {},
                 clangd = {},
                 dockerls = {},
-                -- gopls = {},
-                rust_analyzer = {},
                 lua_ls = {
                     Lua = {
                         workspace = { checkThirdParty = false },

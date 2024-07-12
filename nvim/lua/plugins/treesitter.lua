@@ -10,7 +10,6 @@ return {
         opts = {
             highlight = { enable = false },
             indent = { enable = false },
-            context_commentstring = { enable = true, enable_autocmd = false },
             ensure_installed = "all",
             incremental_selection = {
                 enable = true,
