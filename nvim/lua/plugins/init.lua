@@ -1,11 +1,3 @@
-vim.api.nvim_create_autocmd("User", {
-	pattern = "PersistenceSavePre",
-	desc = "Close neo-tree before saving",
-	callback = function()
-		vim.cmd([[Neotree close]])
-	end,
-})
-
 local builtin = require("telescope.builtin")
 
 return {
@@ -26,6 +18,15 @@ return {
 				},
 			},
 		},
+		config = function()
+			vim.api.nvim_create_autocmd("User", {
+				pattern = "PersistenceSavePre",
+				desc = "Close neo-tree before saving",
+				callback = function()
+					vim.cmd([[Neotree close]])
+				end,
+			})
+		end,
 		keys = {
 			{ "<C-n>", "<cmd>Neotree toggle<cr>", desc = "Toggle Neotree" },
 		},
@@ -46,26 +47,6 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		dependencies = { "saghen/blink.cmp" },
-		-- config = function()
-		-- 	local capabilities = vim.lsp.protocol.make_client_capabilities()
-		-- 	capabilities =
-		-- 		vim.tbl_deep_extend("force", capabilities, require("blink.cmp").get_lsp_capabilities({}, false))
-		--
-		-- 	capabilities = vim.tbl_deep_extend("force", capabilities, {
-		-- 		textDocument = {
-		-- 			foldingRange = {
-		-- 				dynamicRegistration = false,
-		-- 				lineFoldingOnly = true,
-		-- 			},
-		-- 		},
-		-- 	})
-		-- end,
-		-- config = function()
-		-- 	local capabilities = require("blink.cmp").get_lsp_capabilities()
-		-- 	local lspconfig = require("lspconfig")
-		--
-		-- 	lspconfig["clangd"].setup({ capabilities = capabilities })
-		-- end,
 	},
 	{
 		"mason-org/mason-lspconfig.nvim",
@@ -235,5 +216,10 @@ return {
 				end,
 			})
 		end,
+	},
+	{
+		"echasnovski/mini.surround",
+		version = false,
+		opts = {},
 	},
 }
