@@ -14,6 +14,9 @@ vim.opt.relativenumber = true
 vim.opt.smartindent = true -- Insert indents automatically
 vim.opt.showmode = false
 vim.opt.termguicolors = true
+vim.opt.undofile = true
+vim.opt.undolevels = 10000
+vim.opt.swapfile = false
 
 vim.diagnostic.config({
   virtual_text = true, -- Show inline diagnostic messages
