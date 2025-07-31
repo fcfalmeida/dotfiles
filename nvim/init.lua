@@ -16,6 +16,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("config.options")
+require("lua.config.autocommands")
 
 -- Setup lazy.nvim
 require("lazy").setup({

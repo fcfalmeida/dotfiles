@@ -138,6 +138,17 @@ return {
 		config = true,
 	},
 	{
+		"folke/lazydev.nvim",
+		ft = "lua", -- only load on lua files
+		opts = {
+			library = {
+				-- See the configuration section for more details
+				-- Load luvit types when the `vim.uv` word is found
+				{ path = "${3rd}/luv/library", words = { "vim%.uv" } },
+			},
+		},
+	},
+	{
 		"saghen/blink.cmp",
 		-- optional: provides snippets for the snippet source
 		dependencies = { "rafamadriz/friendly-snippets" },
@@ -165,7 +176,15 @@ return {
 				},
 			},
 			sources = {
-				default = { "lsp", "path", "snippets", "buffer" },
+				default = { "lazydev", "lsp", "path", "snippets", "buffer" },
+				providers = {
+					lazydev = {
+						name = "LazyDev",
+						module = "lazydev.integrations.blink",
+						-- make lazydev completions top priority (see `:h blink.cmp`)
+						score_offset = 100,
+					},
+				},
 			},
 			fuzzy = { implementation = "prefer_rust_with_warning" },
 		},
@@ -198,5 +217,23 @@ return {
 		"nvim-lualine/lualine.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 		opts = {},
+	},
+	{
+		"echasnovski/mini.indentscope",
+		version = false,
+		opts = {
+			symbol = "│",
+			options = {
+				try_as_border = true,
+			},
+		},
+		config = function()
+			vim.api.nvim_create_autocmd("FileType", {
+				pattern = { "help", "alpha", "neo-tree", "lazy", "mason" },
+				callback = function()
+					vim.b.miniindentscope_disable = true
+				end,
+			})
+		end,
 	},
 }
