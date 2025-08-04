@@ -1,5 +1,3 @@
-local builtin = require("telescope.builtin")
-
 return {
 	"folke/which-key.nvim",
 	{
@@ -86,34 +84,6 @@ return {
 		"nvim-lua/plenary.nvim",
 	},
 	{
-		"nvim-telescope/telescope.nvim",
-		tag = "0.1.8",
-		dependencies = { "nvim-lua/plenary.nvim" },
-		opts = {
-			defaults = {
-				mappings = {
-					i = {
-						["<C-Down>"] = "cycle_history_next",
-						["<C-Up>"] = "cycle_history_prev",
-						["<C-k>"] = "move_selection_previous",
-						["<C-j>"] = "move_selection_next",
-						["<C-h>"] = "which_key",
-						["<esc>"] = "close",
-					},
-				},
-			},
-		},
-		keys = {
-			{ "gd", "<cmd>Telescope lsp_definitions<cr>", "[G]oto [D]efinition" },
-			{ "gr", "<cmd>Telescope lsp_references<cr>", "[G]oto [R]eferences" },
-			{ "gi", "<cmd>Telescope lsp_implementations<cr>", "[G]oto [I]mplementation" },
-			{ "<leader>sf", builtin.find_files, desc = "[S]earch [F]iles" },
-			{ "<leader>sg", builtin.live_grep, desc = "[S]earch [G]rep" },
-			{ "<leader>sw", builtin.grep_string, desc = "[S]earch Current [W]ord" },
-			{ "<leader><leader>", builtin.buffers, desc = "Search Buffers" },
-		},
-	},
-	{
 		"windwp/nvim-autopairs",
 		event = "InsertEnter",
 		config = true,
@@ -197,7 +167,11 @@ return {
 	{
 		"nvim-lualine/lualine.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
-		opts = {},
+		opts = {
+			options = {
+				disabled_filetypes = { "neo-tree" },
+			},
+		},
 	},
 	{
 		"echasnovski/mini.indentscope",

@@ -20,20 +20,15 @@ vim.opt.swapfile = false
 
 vim.diagnostic.config({
   virtual_text = true, -- Show inline diagnostic messages
-  signs = true,        -- Show signs in the gutter
   underline = true,    -- Underline problematic code
   update_in_insert = false, -- Avoid updating diagnostics in insert mode
   severity_sort = true,
+  signs = {
+	  text = {
+		[vim.diagnostic.severity.ERROR] = " ",
+		[vim.diagnostic.severity.WARN] = " ",
+		[vim.diagnostic.severity.HINT] = " ",
+		[vim.diagnostic.severity.INFO] = " ",
+	  }
+  }
 })
-
-local signs = {
-  Error = " ",
-  Warn  = " ",
-  Hint  = " ",
-  Info  = " ",
-}
-
-for type, icon in pairs(signs) do
-  local hl = "DiagnosticSign" .. type
-  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
-end
