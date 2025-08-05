@@ -19,12 +19,15 @@ return {
 		lazy = false,
 		opts = {
 			filesystem = {
+				filtered_items = {
+					hide_dotfiles = false,
+				},
 				follow_current_file = {
 					enabled = true,
 				},
 			},
 		},
-		config = function()
+		config = function(_, opts)
 			vim.api.nvim_create_autocmd("User", {
 				pattern = "PersistenceSavePre",
 				desc = "Close neo-tree before saving",
@@ -32,6 +35,7 @@ return {
 					vim.cmd([[Neotree close]])
 				end,
 			})
+			require("neo-tree").setup(opts)
 		end,
 		keys = {
 			{ "<C-n>", "<cmd>Neotree toggle<cr>", desc = "Toggle Neotree" },

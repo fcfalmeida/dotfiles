@@ -14,13 +14,14 @@ return {
 				try_as_border = true,
 			},
 		},
-		config = function()
+		config = function(_, opts)
 			vim.api.nvim_create_autocmd("FileType", {
 				pattern = { "help", "alpha", "neo-tree", "lazy", "mason" },
 				callback = function()
 					vim.b.miniindentscope_disable = true
 				end,
 			})
+			require("mini.indentscope").setup(opts)
 		end,
 	},
 	{
