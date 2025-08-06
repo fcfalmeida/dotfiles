@@ -95,4 +95,7 @@ return {
 			},
 		},
 	},
+	{
+		"jeffkreeftmeijer/vim-numbertoggle",
+	},
 }

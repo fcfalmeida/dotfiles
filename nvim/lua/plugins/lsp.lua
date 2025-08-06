@@ -15,6 +15,21 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		dependencies = { "saghen/blink.cmp" },
+		config = function()
+			vim.lsp.config.clangd = {
+				cmd = {
+					"clangd",
+					"--clang-tidy",
+				},
+			}
+		end,
+		keys = {
+			{
+				"<leader>sa",
+				"<cmd>lua vim.lsp.buf.code_action()<cr>",
+				desc = "[S]earch Code [A]ctions for Current Line",
+			},
+		},
 	},
 	{
 		"mason-org/mason-lspconfig.nvim",
