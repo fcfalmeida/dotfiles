@@ -15,7 +15,7 @@ local function search_buffers()
 end
 
 local function search_diagnostics()
-	return require("telescope.builtin").diagnostics()
+	return require("telescope.builtin").diagnostics({ bufnr = 0 })
 end
 
 return {
