@@ -7,4 +7,15 @@ return {
 			options = { "buffers", "curdir", "tabpages", "winsize" },
 		},
 	},
+	{
+		"folke/snacks.nvim",
+		priority = 1000,
+		lazy = false,
+		opts = {
+			bufdelete = { enabled = true },
+		},
+        keys = {
+            { "<S-w>", function() Snacks.bufdelete.delete() end, desc = "Delete current buffer" }
+        }
+	},
 }
