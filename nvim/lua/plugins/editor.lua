@@ -98,4 +98,22 @@ return {
 	{
 		"jeffkreeftmeijer/vim-numbertoggle",
 	},
+	{
+		"RRethy/vim-illuminate",
+		opts = {
+			providers = {
+				"lsp",
+				"treesitter",
+			},
+			filetypes_denylist = {
+				"neo-tree",
+			},
+			modes_allowlist = {
+				"n",
+			},
+		},
+		config = function(_, opts)
+			require("illuminate").configure(opts)
+		end,
+	},
 }
