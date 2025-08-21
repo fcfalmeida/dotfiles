@@ -18,6 +18,12 @@ local function search_diagnostics()
 	return require("telescope.builtin").diagnostics({ bufnr = 0 })
 end
 
+local function search_colorscheme()
+	return require("telescope.builtin").colorscheme({
+		enable_preview = true,
+	})
+end
+
 return {
 	{
 		"nvim-telescope/telescope.nvim",
@@ -51,6 +57,7 @@ return {
 			{ "<leader>sg", search_grep, desc = "[S]earch [G]rep" },
 			{ "<leader>sw", search_word, desc = "[S]earch Current [W]ord" },
 			{ "<leader>sd", search_diagnostics, desc = "[S]earch [D]iagnostics" },
+			{ "<leader>sc", search_colorscheme, desc = "[S]earch [C]olorscheme" },
 			{ "<leader><leader>", search_buffers, desc = "Search Buffers" },
 		},
 		config = function(_, opts)
