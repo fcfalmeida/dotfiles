@@ -18,7 +18,7 @@ test -f $__fish_config_dir/user.fish; and source $__fish_config_dir/user.fish
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 if test -f /home/franciscoalmeida/miniconda3/bin/conda
-    eval /home/franciscoalmeida/miniconda3/bin/conda "shell.fish" "hook" $argv | source
+    status is-interactive && eval /home/franciscoalmeida/miniconda3/bin/conda "shell.fish" "hook" $argv | source
 else
     if test -f "/home/franciscoalmeida/miniconda3/etc/fish/conf.d/conda.fish"
         . "/home/franciscoalmeida/miniconda3/etc/fish/conf.d/conda.fish"
