@@ -23,25 +23,26 @@ return {
 		"nvim-telescope/telescope.nvim",
 		tag = "0.1.8",
 		dependencies = { "nvim-lua/plenary.nvim" },
-		opts = {
-			defaults = {
-				mappings = {
-					i = {
-						["<C-Down>"] = "cycle_history_next",
-						["<C-Up>"] = "cycle_history_prev",
-						["<C-k>"] = "move_selection_previous",
-						["<C-j>"] = "move_selection_next",
-						["<C-h>"] = "which_key",
-						["<esc>"] = "close",
+		opts = function()
+			local themes = require("telescope.themes")
+			return {
+				defaults = {
+					mappings = {
+						i = {
+							["<C-Down>"] = "cycle_history_next",
+							["<C-Up>"] = "cycle_history_prev",
+							["<C-k>"] = "move_selection_previous",
+							["<C-j>"] = "move_selection_next",
+							["<C-h>"] = "which_key",
+							["<esc>"] = "close",
+						},
 					},
 				},
-			},
-			extensions = {
-				["ui-select"] = {
-					require("telescope.themes").get_dropdown({}),
+				extensions = {
+					["ui-select"] = themes.get_dropdown({}),
 				},
-			},
-		},
+			}
+		end,
 		keys = {
 			{ "gd", "<cmd>Telescope lsp_definitions<cr>", "[G]oto [D]efinition" },
 			{ "gr", "<cmd>Telescope lsp_references<cr>", "[G]oto [R]eferences" },
