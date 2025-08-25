@@ -1,0 +1,70 @@
+/* Kanagawa Dragon Theme for Waybar */
+@define-color bg #1F1F28;
+@define-color fg #DCD7BA;
+@define-color accent #7E9CD8;
+@define-color red #C34043;
+@define-color yellow #CFC8A6;
+@define-color green #76946A;
+@define-color orange #FFA066;
+
+* {
+  font-family: BigBlueTermPlus Nerd Font, monospace;
+  font-size: 14px;
+  border: none;
+  min-height: 0;
+}
+
+window#waybar {
+  background-color: alpha(@bg, 0.9);
+  color: @fg;
+  border-bottom: 2px solid alpha(@accent, 0.9);
+}
+
+#workspaces button {
+  padding: 0 8px;
+  color: @fg;
+  background: transparent;
+}
+
+#workspaces button.focused {
+  color: @accent;
+  border-bottom: 2px solid alpha(@accent, 0.9);
+}
+
+#workspaces button.urgent {
+  color: @red;
+}
+
+#cpu,
+#memory,
+#temperature,
+#battery,
+#clock {
+  padding: 0 10px;
+  margin: 0 2px;
+  border-radius: 6px;
+}
+
+#cpu {
+  color: @yellow;
+}
+
+#memory {
+  color: @orange;
+}
+
+#temperature {
+  color: @green;
+}
+
+#battery {
+  color: @accent;
+}
+
+#battery.critical {
+  color: @red;
+}
+
+#clock {
+  color: @fg;
+}

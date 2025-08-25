@@ -1,0 +1,89 @@
+/* =============================
+   Kanagawa Dragon Kitty Inspired
+   Soft Black + Yellow Accents
+   ============================= */
+
+* {
+    font-family: "ShureTechMono Nerd Font", monospace;
+    font-size: 14px;
+    color: #e6c384; /* warm yellow for text */
+    background-color: transparent;
+}
+
+/* Main window */
+window {
+    margin: 5px;
+    border: 2px solid #1a1a1a; /* soft black border */
+    background-color: rgba(18, 18, 18, 0.92); /* soft black with slight transparency */
+    border-radius: 0;
+}
+
+/* Each entry (app) */
+#entry {
+    padding: 8px 12px;
+    margin: 2px 0; /* tighter margins for continuous selection border */
+    border-radius: 0;
+    min-height: 36px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: transparent;
+    color: #dcd7ba; /* soft off-white text */
+}
+
+/* Selected entry */
+#entry:selected {
+    background-color: rgba(230, 195, 132, 0.1); /* subtle golden overlay */
+    color: #ffa066; /* warm yellow-orange text */
+    border: 1px solid #e6c384; /* continuous yellow border */
+}
+
+/* Input box / search bar */
+#input {
+    margin: 10px;
+    padding: 8px 12px;
+    border-radius: 0;
+    border: 1px solid #2a2a2a; /* soft gray-black */
+    background-color: rgba(26, 26, 26, 0.85); /* slightly lighter black */
+    color: #e6c384;
+}
+
+/* Input focus styling */
+#input:focus {
+    border: 1px solid #e6c384;       /* yellow border on focus */
+    outline: none;                   /* remove default outline */
+    box-shadow: none;                /* remove any blue glow */
+    background-color: rgba(26, 26, 26, 0.85);
+    color: #e6c384;
+}
+
+/* Remove active focus artifacts */
+#input:active {
+    box-shadow: none;
+    outline: none;
+}
+
+/* Scrollbar (if used) */
+#scroll {
+    margin: 5px 10px;
+    border-radius: 0;
+}
+
+/* Outer container */
+#outer-box {
+    margin: 0;
+    padding: 10px;
+    border-radius: 0;
+}
+
+/* Text inherit */
+#text {
+    color: inherit;
+}
+
+/* App icons */
+image {
+    margin-right: 8px;
+    min-height: 24px;
+    min-width: 24px;
+}

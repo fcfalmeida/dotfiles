@@ -1,0 +1,46 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 30,
+  "modules-left": [
+    "sway/workspaces"
+  ],
+  "modules-right": [
+    "cpu",
+    "memory",
+    "temperature",
+    "battery",
+    "clock"
+  ],
+
+  "sway/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "format": "{name}"
+  },
+
+  "cpu": {
+    "format": " {usage}%",
+    "tooltip": true
+  },
+
+  "memory": {
+    "format": " {used:0.1f}G",
+    "tooltip": true
+  },
+
+  "temperature": {
+    "critical-threshold": 80,
+    "format": " {temperatureC}°C"
+  },
+
+  "battery": {
+    "format": "{icon} {capacity}%",
+    "format-icons": ["", "", "", "", ""]
+  },
+
+  "clock": {
+    "format": " {:%H:%M}",
+    "tooltip-format": "{:%A, %d %B %Y}"
+  }
+}

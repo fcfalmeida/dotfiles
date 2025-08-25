@@ -1,0 +1,181 @@
+### General Variable Definitions ###
+
+set $mod Mod4
+
+set $left h
+set $down j
+set $up k
+set $right l
+
+set $term ~/.local/kitty.app/bin/kitty
+set $menu wofi -I --show=drun
+set $bar waybar
+set $lock ~/.config/swaylock/run.sh
+set $wallpaper ~/Pictures/wallpapers/current.jpg
+
+include /etc/sway/config-vars.d/*
+
+### Output Settings ###
+
+output * bg $wallpaper fill
+
+output eDP-1 mode 1920x1200@60.003Hz pos 0 0
+output DP-5 mode 2560x1440@59.951Hz pos 1920 0
+output DP-6 mode 1920x1200@59.950Hz pos 4480 0
+
+### Keyboard Layout ###
+
+input "type:keyboard" {
+    xkb_layout pt,us
+    xkb_variant ,altgr-intl
+    xkb_options grp:shifts_toggle
+}
+
+### Theming ###
+
+set $c_border_focused          #DCD7BA
+set $c_bg_focused              #1F1F28
+set $c_text_focused            #DCD7BA
+set $c_indicator_focused       #DCD7BA
+set $c_child_border_focused    #DCD7BA
+
+# Focused but inactive (container active, window not focused)
+set $c_border_focused_inactive #CFC8A6
+set $c_bg_focused_inactive     #1F1F28
+set $c_text_focused_inactive   #DCD7BA
+set $c_indicator_focused_inactive #CFC8A6
+set $c_child_border_focused_inactive #CFC8A6
+
+# Completely unfocused window
+set $c_border_unfocused        #BFB896
+set $c_bg_unfocused            #1F1F28
+set $c_text_unfocused          #2A2A37
+set $c_indicator_unfocused     #BFB896
+set $c_child_border_unfocused  #BFB896
+
+# Urgent window (still red)
+set $c_border_urgent           #C34043
+set $c_bg_urgent               #1F1F28
+set $c_text_urgent             #DCD7BA
+set $c_indicator_urgent        #C34043
+set $c_child_border_urgent     #C34043
+
+# Placeholder (empty containers)
+set $c_border_placeholder      #BFB896
+set $c_bg_placeholder          #1F1F28
+set $c_text_placeholder        #363646
+set $c_indicator_placeholder   #54546D
+set $c_child_border_placeholder #BFB896
+
+client.focused          $c_border_focused $c_bg_focused $c_text_focused $c_indicator_focused $c_child_border_focused
+client.focused_inactive $c_border_focused_inactive $c_bg_focused_inactive $c_text_focused_inactive $c_indicator_focused_inactive $c_child_border_focused_inactive
+client.unfocused        $c_border_unfocused $c_bg_unfocused $c_text_unfocused $c_indicator_unfocused $c_child_border_unfocused
+client.urgent           $c_border_urgent $c_bg_urgent $c_text_urgent $c_indicator_urgent $c_child_border_urgent
+client.placeholder      $c_border_placeholder $c_bg_placeholder $c_text_placeholder $c_indicator_placeholder $c_child_border_placeholder
+
+default_border pixel 3
+gaps inner 5
+
+### Keybindings ###
+
+# General
+bindsym $mod+Return exec $term
+bindsym $mod+w kill
+bindsym $mod+e exec $menu
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+bindsym $mod+F9 exec $lock
+
+# Move focus around
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# Move the focused window with the same, but add Shift
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# Move workspace to focused output
+bindsym $mod+1 [workspace="^1$"] move workspace to output current; workspace number 1
+bindsym $mod+2 [workspace="^2$"] move workspace to output current; workspace number 2
+bindsym $mod+3 [workspace="^3$"] move workspace to output current; workspace number 3
+bindsym $mod+4 [workspace="^4$"] move workspace to output current; workspace number 4
+bindsym $mod+5 [workspace="^5$"] move workspace to output current; workspace number 5
+bindsym $mod+6 [workspace="^6$"] move workspace to output current; workspace number 6
+bindsym $mod+7 [workspace="^7$"] move workspace to output current; workspace number 7
+bindsym $mod+8 [workspace="^8$"] move workspace to output current; workspace number 8
+bindsym $mod+9 [workspace="^9$"] move workspace to output current; workspace number 9
+
+# Move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace number 1
+bindsym $mod+Shift+2 move container to workspace number 2
+bindsym $mod+Shift+3 move container to workspace number 3
+bindsym $mod+Shift+4 move container to workspace number 4
+bindsym $mod+Shift+5 move container to workspace number 5
+bindsym $mod+Shift+6 move container to workspace number 6
+bindsym $mod+Shift+7 move container to workspace number 7
+bindsym $mod+Shift+8 move container to workspace number 8
+bindsym $mod+Shift+9 move container to workspace number 9
+bindsym $mod+Shift+0 move container to workspace number 10
+
+floating_modifier $mod normal
+
+# Vertical/horizontal split
+bindsym $mod+b splith
+bindsym $mod+v splitv
+
+# Make the current focus fullscreen
+bindsym $mod+f fullscreen
+
+# Toggle the current focus between tiling and floating mode
+bindsym $mod+Shift+space floating toggle
+
+# Swap focus between the tiling area and the floating area
+bindsym $mod+space focus mode_toggle
+
+# Move focus to the parent container
+bindsym $mod+a focus parent
+
+# Window resizing
+mode "resize" {
+    # left will shrink the containers width
+    # right will grow the containers width
+    # up will shrink the containers height
+    # down will grow the containers height
+    bindsym $left resize shrink width 10px
+    bindsym $down resize grow height 10px
+    bindsym $up resize shrink height 10px
+    bindsym $right resize grow width 10px
+
+    # Ditto, with arrow keys
+    bindsym Left resize shrink width 10px
+    bindsym Down resize grow height 10px
+    bindsym Up resize shrink height 10px
+    bindsym Right resize grow width 10px
+
+    # Return to default mode
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+r mode "resize"
+
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioPause exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
+# Start status bar
+exec $bar
+
+include /etc/sway/config.d/*
