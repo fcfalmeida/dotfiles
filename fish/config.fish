@@ -1,10 +1,11 @@
+fish_add_path ~/.local/bin
 fish_add_path ~/software/nvim/bin
 fish_add_path /usr/local/texlive/2024/bin/x86_64-linux
 fish_add_path ~/software/vcpkg
 
-set -gx VCPKG_ROOT ~/software/vcpkg
-set -gx EDITOR nvim
-set -gx VISUAL nvim
+set -Ux VCPKG_ROOT ~/software/vcpkg
+set -Ux EDITOR nvim
+set -Ux VISUAL nvim
 
 alias vi nvim
 alias vim nvim
