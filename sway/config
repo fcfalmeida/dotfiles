@@ -85,6 +85,7 @@ bindsym $mod+e exec $menu
 bindsym $mod+Shift+c reload
 bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
 bindsym $mod+F9 exec $lock
+bindsym Print exec grim -g "$(slurp)" - | wl-copy 
 
 # Move focus around
 bindsym $mod+$left focus left
@@ -170,6 +171,7 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
+# Media Keys
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioPause exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
