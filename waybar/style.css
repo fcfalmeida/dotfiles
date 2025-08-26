@@ -28,7 +28,6 @@ window#waybar {
 
 #workspaces button.focused {
   color: @accent;
-  border-bottom: 2px solid alpha(@accent, 0.9);
 }
 
 #workspaces button.urgent {
