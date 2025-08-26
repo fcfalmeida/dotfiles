@@ -9,6 +9,11 @@ return {
 		},
 	},
 	{
+		"echasnovski/mini.ai",
+		version = false,
+		opts = {},
+	},
+	{
 		"mason-org/mason.nvim",
 		opts = {},
 	},
