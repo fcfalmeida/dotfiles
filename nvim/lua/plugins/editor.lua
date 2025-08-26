@@ -46,20 +46,25 @@ return {
 		opts = {
 			keymap = {
 				preset = "default",
-				["<Tab>"] = { "select_next", "fallback" },
+                ["<Tab>"] = { "select_next", "fallback" },
+				["<C-j>"] = { "select_next", "fallback" },
+				["<C-k>"] = { "select_prev", "fallback" },
 				["<CR>"] = { "accept", "fallback" },
 			},
 			appearance = {
 				nerd_font_variant = "mono",
 			},
 			completion = {
-				documentation = { auto_show = false },
+				documentation = { auto_show = true },
 				list = {
 					selection = { preselect = true, auto_insert = true },
 				},
 				accept = {
 					auto_brackets = { enabled = true },
 				},
+			},
+			signature = {
+				enabled = true,
 			},
 			sources = {
 				default = { "lazydev", "lsp", "path", "snippets", "buffer" },
