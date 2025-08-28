@@ -1,7 +1,7 @@
 profile docked-office {
   output "eDP-1" mode 1920x1200@60Hz position 0,0
-  output "DP-5"  mode 2560x1440@59.951Hz position 1920,0
-  output "DP-6"  mode 1920x1200@59.950Hz position 4480,0
+  output "Lenovo Group Limited P24h-10 VTN46149"  mode 2560x1440@59.951Hz position 1920,0
+  output "Lenovo Group Limited LEN T24d-10 V300DK1L"  mode 1920x1200@59.950Hz position 4480,0
 }
 
 profile laptop {
