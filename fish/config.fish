@@ -1,4 +1,5 @@
 fish_add_path ~/.local/bin
+fish_add_path ~/go/bin/
 fish_add_path ~/software/nvim/bin
 fish_add_path /usr/local/texlive/2024/bin/x86_64-linux
 fish_add_path ~/software/vcpkg
