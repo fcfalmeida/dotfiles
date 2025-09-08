@@ -46,7 +46,7 @@ return {
 		opts = {
 			keymap = {
 				preset = "default",
-                ["<Tab>"] = { "select_next", "fallback" },
+				["<Tab>"] = { "select_next", "fallback" },
 				["<C-j>"] = { "select_next", "fallback" },
 				["<C-k>"] = { "select_prev", "fallback" },
 				["<CR>"] = { "accept", "fallback" },
@@ -89,6 +89,7 @@ return {
 				c = { "clang-format" },
 				cpp = { "clang-format" },
 				go = { "gofmt" },
+				python = { "black" },
 			},
 		},
 		keys = {
