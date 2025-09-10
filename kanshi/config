@@ -5,7 +5,7 @@ profile docked-office {
 }
 
 profile docked-home {
-  output "eDP-1" mode 1920x1200@60Hz position 0,1440
+  output "eDP-1" mode 1920x1200@60Hz position 320,1440
   output "LG Electronics LG ULTRAGEAR 308MAWLBCV65" mode 2560x1440@143.933Hz position 0,0
 }
 
