@@ -8,7 +8,7 @@ set $up k
 set $right l
 
 set $term ~/.local/kitty.app/bin/kitty
-set $menu wofi -I --show=drun
+set $menu wofi -I --show=drun --prompt=""
 set $bar waybar
 set $lock ~/.config/swaylock/run.sh
 set $wallpaper ~/Pictures/wallpapers/current.jpg
