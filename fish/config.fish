@@ -17,15 +17,6 @@ set -U fish_greeting
 # Load user-specific configs
 test -f $__fish_config_dir/user.fish; and source $__fish_config_dir/user.fish
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-if test -f /home/franciscoalmeida/miniconda3/bin/conda
-    status is-interactive && eval /home/franciscoalmeida/miniconda3/bin/conda "shell.fish" "hook" $argv | source
-else
-    if test -f "/home/franciscoalmeida/miniconda3/etc/fish/conf.d/conda.fish"
-        . "/home/franciscoalmeida/miniconda3/etc/fish/conf.d/conda.fish"
-    else
-        set -x PATH "/home/franciscoalmeida/miniconda3/bin" $PATH
-    end
+if type -q nvm
+    nvm use latest &> /dev/null
 end
-# <<< conda initialize <<<
