@@ -16,7 +16,7 @@ return {
 		},
 		config = function(_, opts)
 			vim.api.nvim_create_autocmd("FileType", {
-				pattern = { "help", "alpha", "neo-tree", "lazy", "mason" },
+				pattern = { "help", "alpha", "neo-tree", "lazy", "mason", "snacks_terminal" },
 				callback = function()
 					vim.b.miniindentscope_disable = true
 				end,
