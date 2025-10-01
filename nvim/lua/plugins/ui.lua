@@ -41,22 +41,4 @@ return {
 			{ "<C-n>", "<cmd>Neotree toggle<cr>", desc = "Toggle Neotree" },
 		},
 	},
-	{
-		"akinsho/bufferline.nvim",
-        enabled = false,
-		version = "*",
-		dependencies = "nvim-tree/nvim-web-devicons",
-		opts = {
-			options = {
-				offsets = {
-					{
-						filetype = "neo-tree",
-						text = "Neo-tree",
-						highlight = "Directory",
-						text_align = "left",
-					},
-				},
-			},
-		},
-	},
 }
