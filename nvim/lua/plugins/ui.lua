@@ -4,7 +4,7 @@ return {
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 		opts = {
 			options = {
-				disabled_filetypes = { "neo-tree" },
+				disabled_filetypes = { "neo-tree", "snacks_terminal" },
 			},
 		},
 	},
@@ -43,6 +43,7 @@ return {
 	},
 	{
 		"akinsho/bufferline.nvim",
+        enabled = false,
 		version = "*",
 		dependencies = "nvim-tree/nvim-web-devicons",
 		opts = {
