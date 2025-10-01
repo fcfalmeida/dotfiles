@@ -44,6 +44,7 @@ return {
 				"clangd",
 				"pylsp",
 				"gopls",
+				"docker_language_server",
 			},
 		},
 		dependencies = {
