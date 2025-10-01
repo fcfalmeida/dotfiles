@@ -40,6 +40,7 @@ return {
 							["<C-k>"] = "move_selection_previous",
 							["<C-j>"] = "move_selection_next",
 							["<C-h>"] = "which_key",
+							["<C-w>"] = "delete_buffer",
 							["<esc>"] = "close",
 						},
 					},
