@@ -42,7 +42,8 @@ return {
 			ensure_installed = {
 				"lua_ls",
 				"clangd",
-				"pylsp",
+				"ruff",
+				"pyright",
 				"gopls",
 				"docker_language_server",
 			},

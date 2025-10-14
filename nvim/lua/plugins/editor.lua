@@ -89,7 +89,8 @@ return {
 				c = { "clang-format" },
 				cpp = { "clang-format" },
 				go = { "gofmt" },
-				python = { "black" },
+				python = { "ruff_format" },
+				javascript = { "prettierd" },
 			},
 		},
 		keys = {
