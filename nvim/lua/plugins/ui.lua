@@ -9,36 +9,19 @@ return {
 		},
 	},
 	{
-		"nvim-neo-tree/neo-tree.nvim",
-		branch = "v3.x",
-		dependencies = {
-			"nvim-lua/plenary.nvim",
-			"nvim-tree/nvim-web-devicons",
-			"MunifTanjim/nui.nvim",
-		},
+		"stevearc/oil.nvim",
+		---@module 'oil'
+		---@type oil.SetupOpts
+		opts = {},
+		dependencies = { { "nvim-tree/nvim-web-devicons" } },
 		lazy = false,
-		opts = {
-			filesystem = {
-				filtered_items = {
-					hide_dotfiles = false,
-				},
-				follow_current_file = {
-					enabled = true,
-				},
-			},
-		},
-		config = function(_, opts)
-			vim.api.nvim_create_autocmd("User", {
-				pattern = "PersistenceSavePre",
-				desc = "Close neo-tree before saving",
-				callback = function()
-					vim.cmd([[Neotree close]])
-				end,
-			})
-			require("neo-tree").setup(opts)
-		end,
 		keys = {
-			{ "<C-n>", "<cmd>Neotree toggle<cr>", desc = "Toggle Neotree" },
+			{
+				"-",
+				function()
+					require("oil").open()
+				end,
+			},
 		},
 	},
 	{
