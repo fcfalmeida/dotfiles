@@ -1,0 +1,10 @@
+sort=-time
+layer=overlay
+width=300
+height=110
+background-color=#1F1F28
+border-size=2
+border-color=#7E9CD8
+max-icon-size=64
+default-timeout=5000
+font=SureTechMono Nerd Font 10
