@@ -27,7 +27,7 @@ end
 return {
 	{
 		"nvim-telescope/telescope.nvim",
-		tag = "0.1.8",
+		tag = "v0.1.9",
 		dependencies = { "nvim-lua/plenary.nvim" },
 		opts = function()
 			local themes = require("telescope.themes")
