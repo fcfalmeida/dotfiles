@@ -91,6 +91,8 @@ return {
 				go = { "gofmt" },
 				python = { "ruff_format" },
 				javascript = { "prettierd" },
+				json = { "prettierd" },
+				yaml = { "prettierd" },
 			},
 		},
 		keys = {
