@@ -14,8 +14,12 @@ local function search_buffers()
 	return require("telescope.builtin").buffers()
 end
 
-local function search_diagnostics()
+local function search_diagnostics_current()
 	return require("telescope.builtin").diagnostics({ bufnr = 0 })
+end
+
+local function search_diagnostics_global()
+	return require("telescope.builtin").diagnostics()
 end
 
 local function search_colorscheme()
@@ -57,7 +61,8 @@ return {
 			{ "<leader>sf", search_files, desc = "[S]earch [F]iles" },
 			{ "<leader>sg", search_grep, desc = "[S]earch [G]rep" },
 			{ "<leader>sw", search_word, desc = "[S]earch Current [W]ord" },
-			{ "<leader>sd", search_diagnostics, desc = "[S]earch [D]iagnostics" },
+			{ "<leader>sdg", search_diagnostics_global, desc = "[S]earch [D]iagnostics [G]lobally" },
+			{ "<leader>sdc", search_diagnostics_current, desc = "[S]earch [D]iagnostics for [C]urrent Buffer" },
 			{ "<leader>sc", search_colorscheme, desc = "[S]earch [C]olorscheme" },
 			{ "<leader><leader>", search_buffers, desc = "Search Buffers" },
 		},
