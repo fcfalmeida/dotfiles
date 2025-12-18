@@ -93,6 +93,7 @@ return {
 				javascript = { "prettierd" },
 				json = { "prettierd" },
 				yaml = { "prettierd" },
+				bash = { "shfmt" },
 			},
 		},
 		keys = {

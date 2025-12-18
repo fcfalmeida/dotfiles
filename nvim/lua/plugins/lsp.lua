@@ -1,12 +1,9 @@
 return {
 	{
 		"nvim-treesitter/nvim-treesitter",
-		branch = "master",
 		lazy = false,
+		branch = "main",
 		build = ":TSUpdate",
-		opts = {
-			highlight = { enable = true },
-		},
 	},
 	{
 		"echasnovski/mini.ai",
@@ -46,6 +43,8 @@ return {
 				"pyright",
 				"gopls",
 				"docker_language_server",
+				"bash_language_server",
+				"shellcheck",
 			},
 		},
 		dependencies = {
