@@ -43,8 +43,7 @@ return {
 				"pyright",
 				"gopls",
 				"docker_language_server",
-				"bash_language_server",
-				"shellcheck",
+				"bashls",
 			},
 		},
 		dependencies = {
