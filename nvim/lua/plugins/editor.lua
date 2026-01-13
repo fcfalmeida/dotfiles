@@ -127,4 +127,19 @@ return {
 			require("illuminate").configure(opts)
 		end,
 	},
+	{
+		"OXY2DEV/markview.nvim",
+		lazy = false,
+		dependencies = { "saghen/blink.cmp" },
+		opts = {
+			preview = { enable = false },
+		},
+		keys = {
+			{
+				"<C-p>",
+				"<cmd>Markview toggle<cr>",
+                desc = "Toggle Markdown Preview"
+			},
+		},
+	},
 }
