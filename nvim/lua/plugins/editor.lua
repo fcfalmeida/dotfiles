@@ -16,7 +16,7 @@ return {
 		},
 		config = function(_, opts)
 			vim.api.nvim_create_autocmd("FileType", {
-				pattern = { "help", "alpha", "neo-tree", "lazy", "mason", "snacks_terminal" },
+				pattern = { "help", "alpha", "neo-tree", "lazy", "mason", "snacks_terminal", "opencode_terminal" },
 				callback = function()
 					vim.b.miniindentscope_disable = true
 				end,
@@ -146,10 +146,18 @@ return {
 		"MagicDuck/grug-far.nvim",
 		keys = {
 			{
-				"<leader>r",
+				"<leader>rg",
 				function()
 					require("grug-far").open({ transient = true })
 				end,
+				desc = "[R]eplace [G]lobally",
+			},
+			{
+				"<leader>rb",
+				function()
+					require("grug-far").open({ prefills = { paths = vim.fn.expand("%") } })
+				end,
+				desc = "[R]eplace in Current [B]uffer",
 			},
 		},
 	},
