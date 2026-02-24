@@ -12,7 +12,7 @@ return {
 				},
 			},
 			options = {
-				disabled_filetypes = { "neo-tree", "snacks_terminal" },
+				disabled_filetypes = { "neo-tree", "snacks_terminal", "opencode_terminal" },
 			},
 		},
 	},
