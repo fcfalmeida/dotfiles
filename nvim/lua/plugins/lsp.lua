@@ -40,7 +40,7 @@ return {
 				"lua_ls",
 				"clangd",
 				"ruff",
-				"pyright",
+				"ty",
 				"gopls",
 				"docker_language_server",
 				"bashls",
