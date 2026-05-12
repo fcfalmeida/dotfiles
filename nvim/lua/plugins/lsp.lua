@@ -24,6 +24,19 @@ return {
 					"--clang-tidy",
 				},
 			}
+
+			vim.lsp.config.ts_ls = {
+				init_options = {
+					plugins = {
+						{
+							name = "@vue/typescript-plugin",
+							location = vim.fn.expand("$MASON/packages/vue-language-server/node_modules/@vue/language-server"),
+							languages = { "vue" },
+						},
+					},
+				},
+				filetypes = { "typescript", "javascript", "typescriptreact", "javascriptreact", "vue" },
+			}
 		end,
 		keys = {
 			{
@@ -44,6 +57,8 @@ return {
 				"gopls",
 				"docker_language_server",
 				"bashls",
+				"ts_ls",
+				"vue_ls",
 			},
 		},
 		dependencies = {
