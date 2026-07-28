@@ -9,11 +9,22 @@ set -Ux VCPKG_ROOT ~/software/vcpkg
 set -Ux EDITOR nvim
 set -Ux VISUAL nvim
 
+# function nvim
+#     uv version &> /dev/null
+#
+#     if test $status
+#         command nvim
+#     else
+#         uv run nvim
+#     end
+# end
+
 alias vi nvim
 alias vim nvim
 alias 7z 7zz
 
 set -U fish_greeting
+
 
 # Load user-specific configs
 test -f $__fish_config_dir/user.fish; and source $__fish_config_dir/user.fish
