@@ -10,14 +10,16 @@ return {
 		"rebelot/kanagawa.nvim",
 		config = function()
 			require("kanagawa").setup({
-				transparent = true,
+				transparent = false,
 			})
 		end,
 	},
 	{
-		"thesimonho/kanagawa-paper.nvim",
+		"AlexvZyl/nordic.nvim",
 		lazy = false,
 		priority = 1000,
-		opts = {},
+		config = function()
+			require("nordic").load({})
+		end,
 	},
 }
