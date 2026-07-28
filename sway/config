@@ -22,46 +22,52 @@ output * bg $wallpaper fill
 ### Keyboard Layout ###
 
 input "type:keyboard" {
-    xkb_layout pt,us
-    xkb_variant ,altgr-intl
+    xkb_layout us,pt
+    xkb_variant altgr-intl,
     xkb_options grp:shifts_toggle
+}
+
+input type:pointer {
+    pointer_accel -0.5
 }
 
 ### Theming ###
 
-set $c_border_focused          #DCD7BA
-set $c_bg_focused              #1F1F28
+set $c_bg                      #1F1F28
+
+set $c_border_focused          #2A2A37
+set $c_bg_focused              $c_bg
 set $c_text_focused            #DCD7BA
-set $c_indicator_focused       #DCD7BA
-set $c_child_border_focused    #DCD7BA
+set $c_indicator_focused       #2A2A37
+set $c_child_border_focused    #2A2A37
 
 # Focused but inactive (container active, window not focused)
-set $c_border_focused_inactive #CFC8A6
-set $c_bg_focused_inactive     #1F1F28
+set $c_border_focused_inactive $c_bg
+set $c_bg_focused_inactive     $c_bg
 set $c_text_focused_inactive   #DCD7BA
-set $c_indicator_focused_inactive #CFC8A6
-set $c_child_border_focused_inactive #CFC8A6
+set $c_indicator_focused_inactive $c_bg
+set $c_child_border_focused_inactive $c_bg
 
 # Completely unfocused window
-set $c_border_unfocused        #BFB896
-set $c_bg_unfocused            #1F1F28
+set $c_border_unfocused        $c_bg
+set $c_bg_unfocused            $c_bg
 set $c_text_unfocused          #2A2A37
-set $c_indicator_unfocused     #BFB896
-set $c_child_border_unfocused  #BFB896
+set $c_indicator_unfocused     $c_bg
+set $c_child_border_unfocused  $c_bg
 
-# Urgent window (still red)
-set $c_border_urgent           #C34043
-set $c_bg_urgent               #1F1F28
+# Urgent window
+set $c_border_urgent           #2A2A37
+set $c_bg_urgent               $c_bg
 set $c_text_urgent             #DCD7BA
-set $c_indicator_urgent        #C34043
-set $c_child_border_urgent     #C34043
+set $c_indicator_urgent        #2A2A37
+set $c_child_border_urgent     #2A2A37
 
 # Placeholder (empty containers)
-set $c_border_placeholder      #BFB896
-set $c_bg_placeholder          #1F1F28
+set $c_border_placeholder      $c_bg
+set $c_bg_placeholder          $c_bg
 set $c_text_placeholder        #363646
-set $c_indicator_placeholder   #54546D
-set $c_child_border_placeholder #BFB896
+set $c_indicator_placeholder   $c_bg
+set $c_child_border_placeholder $c_bg
 
 client.focused          $c_border_focused $c_bg_focused $c_text_focused $c_indicator_focused $c_child_border_focused
 client.focused_inactive $c_border_focused_inactive $c_bg_focused_inactive $c_text_focused_inactive $c_indicator_focused_inactive $c_child_border_focused_inactive
@@ -69,7 +75,8 @@ client.unfocused        $c_border_unfocused $c_bg_unfocused $c_text_unfocused $c
 client.urgent           $c_border_urgent $c_bg_urgent $c_text_urgent $c_indicator_urgent $c_child_border_urgent
 client.placeholder      $c_border_placeholder $c_bg_placeholder $c_text_placeholder $c_indicator_placeholder $c_child_border_placeholder
 
-default_border pixel 3
+default_border none
+default_floating_border none
 gaps inner 5
 
 ### Keybindings ###
