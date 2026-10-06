@@ -186,5 +186,6 @@ for_window [title="Picture in picture"] floating enable, sticky enable
 ### Background apps ###
 exec $bar
 exec kanshi
+exec_always ~/.local/bin/autotiling
 
 include /etc/sway/config.d/*
