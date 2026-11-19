@@ -96,6 +96,7 @@ return {
 				json = { "prettierd" },
 				yaml = { "prettierd" },
 				sh = { "shfmt" },
+				rust = { "rustfmt" },
 			},
 		},
 		keys = {
@@ -128,21 +129,6 @@ return {
 		config = function(_, opts)
 			require("illuminate").configure(opts)
 		end,
-	},
-	{
-		"OXY2DEV/markview.nvim",
-		lazy = false,
-		dependencies = { "saghen/blink.cmp" },
-		opts = {
-			preview = { enable = false },
-		},
-		keys = {
-			{
-				"<C-p>",
-				"<cmd>Markview toggle<cr>",
-				desc = "Toggle Markdown Preview",
-			},
-		},
 	},
 	{
 		"MagicDuck/grug-far.nvim",
